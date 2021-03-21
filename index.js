@@ -33,10 +33,32 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 (async function example() {
   let driver = await new Builder().forBrowser('chrome').build();
   try {
-    await driver.get('http://www.google.com/ncr');
-    await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
-    await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
+    await driver.get('http://multiapp.localhost/blue/');
+    await driver.findElement(By.name('username')).sendKeys('admin2', Key.TAB);
+    await driver.findElement(By.name('password')).sendKeys('admin2admin2', Key.TAB);
+    // await driver.findElement(By.css(".btn-primary").sendKeys()
+    
+    await driver.findElement(By.xpath("//form//div[4]//div//input")).click();
+    // await driver.findElement(By.xpath("//div/h1"));
+    // await driver.findElement(By.cssSelector("input[type='submit'][value='Login']")).click();
+    
+    
+    //span[contains(text(),'Users')]
+    // await driver.wait(until.titleIs('Tasks & Results Dashboard'), 1000);
+    // await driver.findElement(By.xpath("span[contains(text(),'Users')]"));
+    // await driver.findElement(By.xpath("//h1[contains(text(),'Tasks & Results Dashboard')]"));
+
+
+    let imgUrl = driver.findElement(By.xpath("//h1[contains(text(),'Tasks & Results Dashboard')]"));
+    
+    if (imgUrl) {
+      console.log('Reporint true');
+    }
+
+
+    // driver.sleep(2000);
+
   } finally {
-    await driver.quit();
+    // await driver.quit();
   }
 })();
