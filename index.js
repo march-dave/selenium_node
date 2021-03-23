@@ -49,16 +49,37 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
     // await driver.findElement(By.xpath("//h1[contains(text(),'Tasks & Results Dashboard')]"));
 
 
-    let imgUrl = driver.findElement(By.xpath("//h1[contains(text(),'Tasks & Results Dashboard')]"));
-    
-    if (imgUrl) {
-      console.log('Reporint true');
-    }
-
-
+    let getHeader = driver.findElement(By.xpath("//h1[contains(text(),'Tasks & Results Dashboard')]"));
+    // driver.findElement(By.xpath("//h1[contains(text(),'Tasks & Results Dashboard')]")).then( () =>  {
+    //   driver.getTitle().then( (title) => {
+    //     console.log(title);
+    //   })
+    // })
     // driver.sleep(2000);
+    
+    driver.sleep(2000);
+    if (getHeader) {
+      console.log('Test passed');
+    } else {
+      console.log('Test failed');
+    }
+    driver.sleep(2000);
+
+
+    // driver.sleep(2000).then(function() {
+    //   driver.getTitle().then(function(title) {
+    //     // if(title === 'webdriver - Google Search') {
+    //     if(title) {
+    //       console.log('Test passed');
+    //       console.log(title);
+    //     } else {
+    //       console.log('Test failed');
+    //     }
+    //   });
+    // });
+
 
   } finally {
-    // await driver.quit();
+    await driver.quit();
   }
 })();
