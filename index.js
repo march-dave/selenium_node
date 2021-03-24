@@ -34,8 +34,8 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
   let driver = await new Builder().forBrowser('chrome').build();
   try {
     await driver.get('http://multiapp.localhost/blue/');
-    await driver.findElement(By.name('username')).sendKeys('admin2', Key.TAB);
-    await driver.findElement(By.name('password')).sendKeys('admin2admin2', Key.TAB);
+    await driver.findElement(By.name('username')).sendKeys('', Key.TAB);
+    await driver.findElement(By.name('password')).sendKeys('', Key.TAB);
     // await driver.findElement(By.css(".btn-primary").sendKeys()
     
     await driver.findElement(By.xpath("//form//div[4]//div//input")).click();
