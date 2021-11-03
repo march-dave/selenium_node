@@ -73,7 +73,7 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
     //       console.log('Test passed');
     //       console.log(title);
     //     } else {
-          console.log('Test failed');
+          // console.log('Test failed');
     //     }
     //   });
     // });
