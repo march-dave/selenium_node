@@ -74,12 +74,12 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
     //       console.log(title);
     //     } else {
           // console.log('Test failed');
-    //     }
+    //     }  
     //   });
     // });
 
 
   } finally {
-    await driver.quit();
+    // await driver.quit();
   }
 })();
